@@ -1,6 +1,9 @@
-public class Departamento
+namespace SistemasFuncionario.Models
 {
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public List<Funcionario> Funcionarios { get; set;} = new ();
+    public class Departamento
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public List<Funcionario> Funcionarios { get; set; } = new();
+    }
 }

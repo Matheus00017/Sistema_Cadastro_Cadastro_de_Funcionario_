@@ -1,9 +1,19 @@
-public class Funcionario
+namespace SistemasFuncionario.Models
 {
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Cargo { get; set; }
-    public decimal Salario { get; set; }
-    public int DepartamentoId { get; set; }
-    public Departamento Departamento { get; set; }
+    public class Funcionario
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public string CPF { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Telefone { get; set; } = string.Empty;
+        public string Endereco { get; set; } = string.Empty;
+        public bool Pcd { get; set; }
+        public DateTime DataAdmissao { get; set; }
+        public DateTime? DataDemissao { get; set; }
+        public decimal Salario { get; set; }
+        public string Cargo { get; set; } = string.Empty;
+        public int DepartamentoId { get; set; }
+        public Departamento Departamento { get; set; } = null!;
+    }
 }
