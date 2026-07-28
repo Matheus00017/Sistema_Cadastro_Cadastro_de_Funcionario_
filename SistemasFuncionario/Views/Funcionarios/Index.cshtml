@@ -1,0 +1,39 @@
+@model IEnumerable<SistemasFuncionario.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Funcionários";
+}
+
+<h1>Funcionários</h1>
+
+<p>
+    <a asp-action="Create">+ Novo Funcionário</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Departamento</th>
+            <th>Data Admissão</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var funcionario in Model)
+        {
+            <tr>
+                <td>@funcionario.Nome</td>
+                <td>@funcionario.Cargo</td>
+                <td>@funcionario.Departamento.Nome</td>
+                <td>@funcionario.DataAdmissao.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@funcionario.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@funcionario.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@funcionario.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
